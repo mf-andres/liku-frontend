@@ -18,6 +18,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AddGiftComponent } from './add-gift/add-gift.component';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AddGiftComponent } from './add-gift/add-gift.component';
     MatSlideToggleModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatInputModule,
   ],
   providers: [MatNativeDateModule],
   bootstrap: [AppComponent],
