@@ -27,3 +27,7 @@
 Cypress.Commands.add("goToLogin", () => {
   cy.visit("/");
 });
+
+Cypress.Commands.add("goToBirthdays", () => {
+  cy.visit("/birthdays");
+});
