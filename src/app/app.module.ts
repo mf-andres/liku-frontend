@@ -6,15 +6,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BirthdaysComponent } from './birthdays/birthdays.component';
+import { GiftsComponent } from './gifts/gifts.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, BirthdaysComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    BirthdaysComponent,
+    GiftsComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -24,6 +31,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatFormFieldModule,
     MatIconModule,
+    MatSlideToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
