@@ -1,16 +1,15 @@
 /// <reference types="cypress" />
 
-context("The login view", () => {
+context("The add birthday view", () => {
   // beforeEach(() => {
   //   cy.visit("https://example.cypress.io/commands/connectors");
   // });
 
   it("has the necesary elements", () => {
-    cy.goToLogin();
+    cy.goToAddBirthday();
 
-    cy.get("#toolbar");
     cy.get("#view-title");
-    cy.get("#login-form");
-    cy.get("#login-button");
+    cy.get("#add-birthday-form");
+    cy.get("#add-birthday-button");
   });
 });

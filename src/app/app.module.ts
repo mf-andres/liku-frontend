@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BirthdaysComponent } from './birthdays/birthdays.component';
 import { GiftsComponent } from './gifts/gifts.component';
+import { AddBirthdayComponent } from './add-birthday/add-birthday.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
@@ -14,6 +15,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     LoginComponent,
     BirthdaysComponent,
     GiftsComponent,
+    AddBirthdayComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,8 +36,10 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatFormFieldModule,
     MatIconModule,
     MatSlideToggleModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
-  providers: [],
+  providers: [MatNativeDateModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
