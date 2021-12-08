@@ -20,4 +20,12 @@ context("The birthdays view", () => {
 
     cy.get("#view-title").contains("Lista de regalos");
   });
+
+  it("goes to the add birthday view when user clicks over the add birthday button", () => {
+    cy.goToBirthdays();
+
+    cy.get("#add-birthday-button").click();
+
+    cy.get("#view-title").contains("Añadir cumpleaños");
+  });
 });
