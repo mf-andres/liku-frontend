@@ -39,3 +39,7 @@ Cypress.Commands.add("goToGifts", () => {
 Cypress.Commands.add("goToAddBirthday", () => {
   cy.visit("/add-birthday");
 });
+
+Cypress.Commands.add("goToAddGift", () => {
+  cy.visit("/add-gift");
+});

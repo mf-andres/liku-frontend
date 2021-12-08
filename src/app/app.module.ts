@@ -17,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { AddGiftComponent } from './add-gift/add-gift.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     BirthdaysComponent,
     GiftsComponent,
     AddBirthdayComponent,
+    AddGiftComponent,
   ],
   imports: [
     BrowserModule,
