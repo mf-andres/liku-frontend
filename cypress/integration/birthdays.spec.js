@@ -12,4 +12,12 @@ context("The birthdays view", () => {
     cy.get("#birthdays-list");
     cy.get("#add-birthday-button");
   });
+
+  it("goes to the gifts view when user clicks over the first birthday person name", () => {
+    cy.goToBirthdays();
+
+    cy.get("#birthdays-list").first().get(".birthday-person").click();
+
+    cy.get("#view-title").contains("Lista de regalos");
+  });
 });
