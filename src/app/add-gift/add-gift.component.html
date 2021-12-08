@@ -6,8 +6,10 @@
   <form>
     <mat-form-field>
       <mat-label>Descripción</mat-label>
-      <input matInput placeholder="Descripción" />
+      <input id="description-input" matInput placeholder="Descripción" />
     </mat-form-field>
   </form>
-  <button id="add-gift-button" mat-button>Añadir regalo</button>
+  <button id="add-gift-button" mat-button (click)="onAddGift()">
+    Añadir regalo
+  </button>
 </mat-card>
