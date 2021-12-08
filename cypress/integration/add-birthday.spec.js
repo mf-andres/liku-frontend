@@ -12,4 +12,10 @@ context("The add birthday view", () => {
     cy.get("#add-birthday-form");
     cy.get("#add-birthday-button");
   });
+
+  it("goes to the birthdays view after the user fills the form correctly and presses the add birthday button", () => {
+    cy.goToAddBirthday();
+    // TODO deal with the date and the birthday person
+    cy.get("#add-birthday-button").click();
+  });
 });

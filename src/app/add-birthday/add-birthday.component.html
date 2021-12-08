@@ -16,5 +16,7 @@
       <input matInput placeholder="Cumpleañero" />
     </mat-form-field>
   </form>
-  <button id="add-birthday-button" mat-button>Añadir cumpleaños</button>
+  <button id="add-birthday-button" mat-button (click)="onAddBirthday()">
+    Añadir cumpleaños
+  </button>
 </mat-card>
