@@ -11,6 +11,6 @@ export class AuthenticationService {
 
   login(user: string): void {
     this.user;
-    this.router.navigate(['birthdays']);
+    this.router.navigate(['birthdays'], { queryParams: { userId: user } });
   }
 }

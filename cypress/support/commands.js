@@ -29,7 +29,9 @@ Cypress.Commands.add("goToLogin", () => {
 });
 
 Cypress.Commands.add("goToBirthdays", () => {
-  cy.visit("/birthdays");
+  cy.visit("/");
+  cy.get("#user-input").type("user");
+  cy.get("#login-button").click();
 });
 
 Cypress.Commands.add("goToGifts", () => {

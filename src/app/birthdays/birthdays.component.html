@@ -3,10 +3,12 @@
 </mat-card>
 
 <div id="birthdays-list">
-  <mat-card>
-    <span class="date"> 11/03 </span>
+  <mat-card *ngFor="let birthday of birthdays | async">
+    <span class="date"> {{ birthday.date }} </span>
 
-    <span class="birthday-person" routerLink="/gifts"> Andrés Muñoz </span>
+    <span class="birthday-person" routerLink="/gifts">
+      {{ birthday.birthdayPerson }}
+    </span>
 
     <button class="edit-button" mat-button>
       <mat-icon>edit</mat-icon>

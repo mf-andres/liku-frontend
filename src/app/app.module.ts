@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BirthdaysComponent } from './birthdays/birthdays.component';
 import { GiftsComponent } from './gifts/gifts.component';
 import { AddBirthdayComponent } from './add-birthday/add-birthday.component';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
@@ -44,6 +45,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatNativeDateModule,
     MatInputModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [MatNativeDateModule],
   bootstrap: [AppComponent],

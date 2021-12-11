@@ -22,9 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void {
-    console.log('reaching here');
     if (this.formGroup.valid) {
-      console.log('reaching here');
       const user = this.formGroup.controls['user'].value;
       this.authenticationService.login(user);
     }
