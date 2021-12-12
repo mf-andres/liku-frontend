@@ -40,9 +40,15 @@ Cypress.Commands.add("goToGifts", () => {
 });
 
 Cypress.Commands.add("goToAddBirthday", () => {
-  cy.visit("/add-birthday");
+  cy.goToBirthdays();
+  cy.get("#add-birthday-button").click();
 });
 
 Cypress.Commands.add("goToAddGift", () => {
   cy.visit("/add-gift");
+});
+
+Cypress.Commands.add("fillAddBirthdayForm", () => {
+  cy.get("#date-input").type("01/01/2021");
+  cy.get("#birthday-person-input").type("Eichiro Oda");
 });

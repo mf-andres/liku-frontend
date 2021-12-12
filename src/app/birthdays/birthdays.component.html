@@ -28,6 +28,11 @@
   </mat-card>
 </div>
 
-<button id="add-birthday-button" mat-button routerLink="/add-birthday">
+<button
+  id="add-birthday-button"
+  mat-button
+  routerLink="/add-birthday"
+  [queryParams]="{ userId: userId }"
+>
   <mat-icon>add</mat-icon>
 </button>

@@ -17,5 +17,6 @@ context("The add gift view", () => {
     cy.goToAddGift();
     cy.get("#description-input").type("mochila");
     cy.get("#add-gift-button").click();
+    cy.get("#view-title").contains("Lista de regalos");
   });
 });

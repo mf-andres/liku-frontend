@@ -3,20 +3,30 @@
 </mat-card>
 
 <mat-card id="add-birthday-form">
-  <form>
+  <form [formGroup]="formGroup">
     <mat-form-field>
       <mat-label>Fecha</mat-label>
-      <input matInput [matDatepicker]="picker" />
+      <input
+        id="date-input"
+        matInput
+        [matDatepicker]="picker"
+        formControlName="date"
+      />
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Cumpleañero</mat-label>
-      <input matInput placeholder="Cumpleañero" />
+      <input
+        id="birthday-person-input"
+        matInput
+        placeholder="Cumpleañero"
+        formControlName="birthdayPerson"
+      />
     </mat-form-field>
   </form>
-  <button id="add-birthday-button" mat-button (click)="onAddBirthday()">
+  <button id="add-birthday-button" mat-button (click)="addBirthday()">
     Añadir cumpleaños
   </button>
 </mat-card>

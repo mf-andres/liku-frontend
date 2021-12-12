@@ -24,6 +24,9 @@ export class BirthdaysService {
     return response$;
   }
   // TODO add http interceptor
+  addBirthday(birthday: Birthday): void {
+    this.http.post(environment.birthdayURL, birthday).pipe(first()).subscribe();
+  }
 
   removeBirthday(birthdayId: string): void {
     this.http
