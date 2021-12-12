@@ -5,7 +5,7 @@
 <mat-slide-toggle id="gifted-non-gifted-slide">Gifted</mat-slide-toggle>
 
 <div id="gifts-list">
-  <mat-card *ngFor="let gift of gifts | async">
+  <mat-card [id]="gift.id" *ngFor="let gift of gifts | async">
     <div class="gift-description-container">
       <span class="description"> {{ gift.description }} </span>
     </div>
@@ -19,7 +19,7 @@
         <mat-icon>edit</mat-icon>
       </button>
 
-      <button class="remove-button" mat-button>
+      <button class="remove-button" mat-button (click)="removeGift(gift.id)">
         <mat-icon>remove</mat-icon>
       </button>
     </div>

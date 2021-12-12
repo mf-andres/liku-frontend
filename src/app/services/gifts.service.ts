@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { first, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Gift } from '../models/gift';
 
@@ -25,4 +25,11 @@ export class GiftsService {
     return response$;
   }
   // TODO add http interceptor
+
+  removeGift(giftId: string): void {
+    this.http
+      .delete(`${environment.giftURL}/${giftId}`)
+      .pipe(first())
+      .subscribe();
+  }
 }

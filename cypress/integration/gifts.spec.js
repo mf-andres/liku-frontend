@@ -8,6 +8,9 @@ context("The gifts view", () => {
     cy.intercept("GET", "http://localhost:8000/gifts*", {
       fixture: "get_gifts_response.json",
     }).as("getGifts");
+    cy.intercept("DELETE", "http://localhost:8000/gift/*", {
+      statusCode: 200,
+    }).as("removeGift");
   });
 
   it("has the necesary elements", () => {
@@ -31,6 +34,17 @@ context("The gifts view", () => {
     cy.wait("@getGifts").then((interception) => {
       expect(interception.request.url).to.match(
         /\?userID=user&birthdayId=c74ef681-5b22-4049-b7df-41cc2b66a008/
+      );
+    });
+  });
+
+  it("calls the gift service correctly to remove a gift", () => {
+    cy.goToGifts();
+
+    cy.get(".remove-button").first().click();
+    cy.wait("@removeGift").then((interception) => {
+      expect(interception.request.url).to.match(
+        /\/a05a3f69-7360-41e4-9360-67d961fba75a/
       );
     });
   });

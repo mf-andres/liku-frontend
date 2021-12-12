@@ -7,6 +7,7 @@ export const environment = {
   birthdaysURL: 'http://localhost:8000/birthdays',
   birthdayURL: 'http://localhost:8000/birthday',
   giftsURL: 'http://localhost:8000/gifts',
+  giftURL: 'http://localhost:8000/gift',
 };
 
 /*

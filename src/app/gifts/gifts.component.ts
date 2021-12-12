@@ -26,4 +26,9 @@ export class GiftsComponent implements OnInit {
       })
     );
   }
+
+  removeGift(giftId: string) {
+    document.getElementById(giftId)?.remove();
+    this.giftsService.removeGift(giftId);
+  }
 }
