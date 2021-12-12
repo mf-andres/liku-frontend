@@ -3,7 +3,7 @@
 </mat-card>
 
 <div id="birthdays-list">
-  <mat-card *ngFor="let birthday of birthdays | async">
+  <mat-card [id]="birthday.id" *ngFor="let birthday of birthdays | async">
     <span class="date"> {{ birthday.date }} </span>
 
     <span
@@ -18,7 +18,11 @@
       <mat-icon>edit</mat-icon>
     </button>
 
-    <button class="remove-button" mat-button>
+    <button
+      class="remove-button"
+      mat-button
+      (click)="removeBirthday(birthday.id)"
+    >
       <mat-icon>remove</mat-icon>
     </button>
   </mat-card>

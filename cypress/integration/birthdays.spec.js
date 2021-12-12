@@ -5,9 +5,9 @@ context("The birthdays view", () => {
     cy.intercept("GET", "http://localhost:8000/birthdays*", {
       fixture: "get_birthdays_response.json",
     }).as("getBirthdays");
-    cy.intercept("GET", "http://localhost:8000/birthdays*", {
-      fixture: "get_birthdays_response.json",
-    }).as("getBirthdays");
+    cy.intercept("DELETE", "http://localhost:8000/birthday/*", {
+      statusCode: 200,
+    }).as("removeBirthday");
   });
 
   it("has the necesary elements", () => {
@@ -39,6 +39,17 @@ context("The birthdays view", () => {
 
     cy.wait("@getBirthdays").then((interception) => {
       expect(interception.request.url).to.match(/\?userID=user/);
+    });
+  });
+
+  it("calls the birthday service correctly to remove a birthday", () => {
+    cy.goToBirthdays();
+
+    cy.get(".remove-button").first().click();
+    cy.wait("@removeBirthday").then((interception) => {
+      expect(interception.request.url).to.match(
+        /\/c74ef681-5b22-4049-b7df-41cc2b66a008/
+      );
     });
   });
 });

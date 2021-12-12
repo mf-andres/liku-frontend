@@ -26,4 +26,9 @@ export class BirthdaysComponent implements OnInit {
       })
     );
   }
+
+  removeBirthday(birthdayId: string): void {
+    document.getElementById(birthdayId)?.remove();
+    this.birthdaysService.removeBirthday(birthdayId);
+  }
 }

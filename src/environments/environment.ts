@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   birthdaysURL: 'http://localhost:8000/birthdays',
+  birthdayURL: 'http://localhost:8000/birthday',
   giftsURL: 'http://localhost:8000/gifts',
 };
 

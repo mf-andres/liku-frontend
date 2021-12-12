@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { first } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Birthday } from '../models/birthday';
 
@@ -23,4 +24,11 @@ export class BirthdaysService {
     return response$;
   }
   // TODO add http interceptor
+
+  removeBirthday(birthdayId: string): void {
+    this.http
+      .delete(`${environment.birthdayURL}/${birthdayId}`)
+      .pipe(first())
+      .subscribe();
+  }
 }
