@@ -1,0 +1,16 @@
+[
+  {
+    "id": "a05a3f69-7360-41e4-9360-67d961fba75a",
+    "userId": "Andrés",
+    "birthdayId": "c74ef681-5b22-4049-b7df-41cc2b66a008",
+    "gifted": false,
+    "description": "bicicleta"
+  },
+  {
+    "id": "0e32aeb6-cc73-4655-896c-a0a954bfa029",
+    "userId": "Andrés",
+    "birthdayId": "c74ef681-5b22-4049-b7df-41cc2b66a008",
+    "gifted": false,
+    "description": "cerveza kirin"
+  }
+]

@@ -29,13 +29,14 @@ Cypress.Commands.add("goToLogin", () => {
 });
 
 Cypress.Commands.add("goToBirthdays", () => {
-  cy.visit("/");
+  cy.goToLogin();
   cy.get("#user-input").type("user");
   cy.get("#login-button").click();
 });
 
 Cypress.Commands.add("goToGifts", () => {
-  cy.visit("/gifts");
+  cy.goToBirthdays();
+  cy.get(".birthday-person").first().click();
 });
 
 Cypress.Commands.add("goToAddBirthday", () => {

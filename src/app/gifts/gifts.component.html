@@ -5,9 +5,9 @@
 <mat-slide-toggle id="gifted-non-gifted-slide">Gifted</mat-slide-toggle>
 
 <div id="gifts-list">
-  <mat-card>
+  <mat-card *ngFor="let gift of gifts | async">
     <div class="gift-description-container">
-      <span class="description"> Bicicleta </span>
+      <span class="description"> {{ gift.description }} </span>
     </div>
 
     <div class="gift-options-container">

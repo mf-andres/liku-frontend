@@ -21,8 +21,8 @@ export class BirthdaysComponent implements OnInit {
   ngOnInit(): void {
     this.birthdays = this.route.queryParams.pipe(
       switchMap((params) => {
-        const userId = params['userId'];
-        return this.birthdaysService.getBirthdays(userId);
+        this.userId = params['userId'];
+        return this.birthdaysService.getBirthdays(this.userId);
       })
     );
   }

@@ -5,6 +5,9 @@ context("The birthdays view", () => {
     cy.intercept("GET", "http://localhost:8000/birthdays*", {
       fixture: "get_birthdays_response.json",
     }).as("getBirthdays");
+    cy.intercept("GET", "http://localhost:8000/birthdays*", {
+      fixture: "get_birthdays_response.json",
+    }).as("getBirthdays");
   });
 
   it("has the necesary elements", () => {
@@ -31,7 +34,7 @@ context("The birthdays view", () => {
     cy.get("#view-title").contains("Añadir cumpleaños");
   });
 
-  it("calls the birthdays", () => {
+  it("calls the birthdays service correctly", () => {
     cy.goToBirthdays();
 
     cy.wait("@getBirthdays").then((interception) => {

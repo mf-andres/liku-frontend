@@ -6,7 +6,11 @@
   <mat-card *ngFor="let birthday of birthdays | async">
     <span class="date"> {{ birthday.date }} </span>
 
-    <span class="birthday-person" routerLink="/gifts">
+    <span
+      class="birthday-person"
+      routerLink="/gifts"
+      [queryParams]="{ userId: userId, birthdayId: birthday.id }"
+    >
       {{ birthday.birthdayPerson }}
     </span>
 
