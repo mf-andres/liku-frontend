@@ -25,7 +25,7 @@ context("The add birthday view", () => {
     cy.get("#view-title").contains("Cumpleaños");
   });
 
-  it("calls the gift service correctly to add a gift", () => {
+  it("calls the birthday service correctly to add a birthday", () => {
     cy.goToAddBirthday();
     cy.fillAddBirthdayForm();
     cy.get("#add-birthday-button").click();

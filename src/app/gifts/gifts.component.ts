@@ -10,6 +10,9 @@ import { GiftsService } from '../services/gifts.service';
   styleUrls: ['./gifts.component.css'],
 })
 export class GiftsComponent implements OnInit {
+  userId!: string;
+  birthdayId!: string;
+
   gifts!: Observable<Gift[]>;
 
   constructor(
@@ -20,9 +23,9 @@ export class GiftsComponent implements OnInit {
   ngOnInit(): void {
     this.gifts = this.route.queryParams.pipe(
       switchMap((params) => {
-        const userId = params['userId'];
-        const birthdayId = params['birthdayId'];
-        return this.giftsService.getGifts(userId, birthdayId);
+        this.userId = params['userId'];
+        this.birthdayId = params['birthdayId'];
+        return this.giftsService.getGifts(this.userId, this.birthdayId);
       })
     );
   }

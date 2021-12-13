@@ -26,6 +26,11 @@
   </mat-card>
 </div>
 
-<button id="add-gift-button" mat-button routerLink="/add-gift">
+<button
+  id="add-gift-button"
+  mat-button
+  routerLink="/add-gift"
+  [queryParams]="{ userId: userId, birthdayId: birthdayId }"
+>
   <mat-icon>add</mat-icon>
 </button>

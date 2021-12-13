@@ -25,6 +25,9 @@ export class GiftsService {
     return response$;
   }
   // TODO add http interceptor
+  addGift(gift: Gift): void {
+    this.http.post(environment.giftURL, gift).pipe(first()).subscribe();
+  }
 
   removeGift(giftId: string): void {
     this.http

@@ -23,8 +23,9 @@ context("The gifts view", () => {
   });
 
   it("goes to the add gift view when user presses the add gift button", () => {
-    cy.get("#add-gift-button").click();
+    cy.goToGifts();
 
+    cy.get("#add-gift-button").click();
     cy.get("#view-title").contains("Añadir regalo");
   });
 
