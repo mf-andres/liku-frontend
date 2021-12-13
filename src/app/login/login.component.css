@@ -1,0 +1,20 @@
+mat-card {
+  margin: 35px;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+mat-form-field {
+  margin: 10px;
+  width: 50vw;
+}
+
+#login-button {
+  margin: 10px;
+}

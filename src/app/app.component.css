@@ -1,3 +1,7 @@
+#toolbar {
+  padding-left: 35px;
+}
+
 .example-spacer {
   flex: 1 1 auto;
 }
