@@ -16,7 +16,7 @@ export class BirthdaysService {
       'Content-Type',
       'application/json'
     );
-    const params = new HttpParams().append('userID', userId);
+    const params = new HttpParams().append('userId', userId);
     const response$ = this.http.get<Birthday[]>(environment.birthdaysURL, {
       headers,
       params,

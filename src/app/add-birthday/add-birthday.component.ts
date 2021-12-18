@@ -25,6 +25,7 @@ export class AddBirthdayComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.pipe(first()).subscribe((params) => {
       this.userId = params['userId'];
+      console.log('user id' + this.userId);
     });
 
     this.formGroup = this.formBuilder.group({
@@ -37,11 +38,14 @@ export class AddBirthdayComponent implements OnInit {
     const birthday: Birthday = {
       id: uuidv4(),
       userId: this.userId,
-      date: this.formGroup.get('date')?.value,
+      date: this.formGroup.get('date')?.value.toISOString().substring(0, 10),
       birthdayPerson: this.formGroup.get('birthdayPerson')?.value,
     };
+    console.log(this.userId);
     this.birthdaysService.addBirthday(birthday);
-    this.router.navigate(['/birthdays']);
+    this.router.navigate(['/birthdays'], {
+      queryParams: { userId: this.userId },
+    });
   }
 }
 

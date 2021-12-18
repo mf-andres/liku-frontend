@@ -43,6 +43,8 @@ export class AddGiftComponent implements OnInit {
       description: this.formGroup.get('description')?.value,
     };
     this.giftsService.addGift(gift);
-    this.router.navigate(['gifts']);
+    this.router.navigate(['gifts'], {
+      queryParams: { userId: this.userId, birthdayId: this.birthdayId },
+    });
   }
 }

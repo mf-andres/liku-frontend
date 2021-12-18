@@ -16,7 +16,7 @@ export class GiftsService {
       'application/json'
     );
     const params = new HttpParams()
-      .append('userID', userId)
+      .append('userId', userId)
       .append('birthdayId', birthdayId);
     const response$ = this.http.get<Gift[]>(environment.giftsURL, {
       headers,
