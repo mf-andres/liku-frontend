@@ -39,6 +39,14 @@ export class GiftsComponent implements OnInit {
 
   onSlideToggle(): void {
     this.showGifted = !this.showGifted;
+    if (!this.showGifted) {
+      this.gifts = this.giftsService.getGifts(this.userId, this.birthdayId);
+    } else {
+      this.gifts = this.giftsService.getGiftedGifts(
+        this.userId,
+        this.birthdayId
+      );
+    }
   }
 
   onMarkAsGifted(giftId: string) {

@@ -19,11 +19,21 @@
 
     <div class="gift-options-container">
       <button
+        *ngIf="!showGifted"
         class="mark-as-gifted-button"
         mat-button
         (click)="onMarkAsGifted(gift.id)"
       >
         Marcar como regalado
+      </button>
+
+      <button
+        *ngIf="showGifted"
+        class="mark-as-gifted-button"
+        mat-button
+        (click)="onMarkAsGifted(gift.id)"
+      >
+        Desmarcar como regalado
       </button>
 
       <button

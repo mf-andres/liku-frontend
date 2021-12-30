@@ -24,6 +24,22 @@ export class GiftsService {
     });
     return response$;
   }
+
+  getGiftedGifts(userId: string, birthdayId: string): Observable<Gift[]> {
+    const headers = new HttpHeaders().append(
+      'Content-Type',
+      'application/json'
+    );
+    const params = new HttpParams()
+      .append('userId', userId)
+      .append('birthdayId', birthdayId);
+    const response$ = this.http.get<Gift[]>(environment.giftedGifts, {
+      headers,
+      params,
+    });
+    return response$;
+  }
+
   // TODO add http interceptor
   addGift(gift: Gift): void {
     this.http.post(environment.giftURL, gift).pipe(first()).subscribe();
