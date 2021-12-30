@@ -13,6 +13,9 @@ import { BirthdaysService } from '../services/birthdays.service';
 export class EditBirthdayComponent implements OnInit {
   userId!: string;
   birthdayId!: string;
+  date!: string;
+  birthdayPerson!: string;
+
   formGroup!: FormGroup;
 
   // TODO load the resource to give default values for date and birthday
@@ -27,11 +30,13 @@ export class EditBirthdayComponent implements OnInit {
     this.route.queryParams.pipe(first()).subscribe((params) => {
       this.userId = params['userId'];
       this.birthdayId = params['birthdayId'];
+      this.date = params['date'];
+      this.birthdayPerson = params['birthdayPerson'];
     });
 
     this.formGroup = this.formBuilder.group({
-      date: '',
-      birthdayPerson: '',
+      date: this.date,
+      birthdayPerson: this.birthdayPerson,
     });
   }
 

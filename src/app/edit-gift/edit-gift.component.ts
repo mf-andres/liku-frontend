@@ -14,6 +14,7 @@ export class EditGiftComponent implements OnInit {
   userId!: string;
   birthdayId!: string;
   giftId!: string;
+  description!: string;
   formGroup!: FormGroup;
 
   constructor(
@@ -28,10 +29,11 @@ export class EditGiftComponent implements OnInit {
       this.userId = params['userId'];
       this.birthdayId = params['birthdayId'];
       this.giftId = params['giftId'];
+      this.description = params['description'];
     });
 
     this.formGroup = this.formBuilder.group({
-      description: '',
+      description: this.description,
     });
   }
 

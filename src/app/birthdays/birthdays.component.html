@@ -23,7 +23,12 @@
         class="edit-button"
         mat-button
         routerLink="/edit-birthday"
-        [queryParams]="{ userId: userId, birthdayId: birthday.id }"
+        [queryParams]="{
+          userId: userId,
+          birthdayId: birthday.id,
+          date: birthday.date,
+          birthdayPerson: birthday.birthdayPerson
+        }"
       >
         <mat-icon>edit</mat-icon>
       </button>
