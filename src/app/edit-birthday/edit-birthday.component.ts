@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs';
 import { Birthday } from '../models/birthday';
 import { BirthdaysService } from '../services/birthdays.service';
+import { DateService } from '../services/date.service';
 
 @Component({
   selector: 'app-edit-birthday',
@@ -23,7 +24,8 @@ export class EditBirthdayComponent implements OnInit {
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private birthdaysService: BirthdaysService,
-    private router: Router
+    private router: Router,
+    private dateService: DateService
   ) {}
 
   ngOnInit(): void {
@@ -44,7 +46,7 @@ export class EditBirthdayComponent implements OnInit {
     const birthday: Birthday = {
       id: this.birthdayId,
       userId: this.userId,
-      date: this.formGroup.get('date')?.value.toISOString().substring(0, 10),
+      date: this.dateService.formatDate(this.formGroup.get('date')?.value),
       birthdayPerson: this.formGroup.get('birthdayPerson')?.value,
     };
     this.birthdaysService.editBirthday(birthday);

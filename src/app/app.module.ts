@@ -17,7 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { AddGiftComponent } from './add-gift/add-gift.component';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -52,7 +52,10 @@ import { EditGiftComponent } from './edit-gift/edit-gift.component';
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  providers: [MatNativeDateModule],
+  providers: [
+    MatDatepickerModule,
+    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
