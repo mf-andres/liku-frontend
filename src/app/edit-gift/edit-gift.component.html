@@ -1,0 +1,20 @@
+<mat-card id="view-title">
+  <mat-card-title>Editar regalo</mat-card-title>
+</mat-card>
+
+<mat-card id="edit-gift-form">
+  <form [formGroup]="formGroup">
+    <mat-form-field>
+      <mat-label>Descripción</mat-label>
+      <input
+        id="description-input"
+        matInput
+        placeholder="Descripción"
+        formControlName="description"
+      />
+    </mat-form-field>
+  </form>
+  <button id="edit-gift-button" mat-button (click)="onEditGift()">
+    Confirmar cambios
+  </button>
+</mat-card>

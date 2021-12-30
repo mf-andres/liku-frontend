@@ -22,6 +22,7 @@ import { AddGiftComponent } from './add-gift/add-gift.component';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditBirthdayComponent } from './edit-birthday/edit-birthday.component';
+import { EditGiftComponent } from './edit-gift/edit-gift.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { EditBirthdayComponent } from './edit-birthday/edit-birthday.component';
     AddBirthdayComponent,
     AddGiftComponent,
     EditBirthdayComponent,
+    EditGiftComponent,
   ],
   imports: [
     BrowserModule,

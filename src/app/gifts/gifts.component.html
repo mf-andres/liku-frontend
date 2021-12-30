@@ -17,7 +17,16 @@
         Marcar como regalado
       </button>
 
-      <button class="edit-button" mat-button>
+      <button
+        class="edit-button"
+        mat-button
+        routerLink="/edit-gift"
+        [queryParams]="{
+          userId: userId,
+          birthdayId: birthdayId,
+          giftId: gift.id
+        }"
+      >
         <mat-icon>edit</mat-icon>
       </button>
 

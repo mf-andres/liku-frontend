@@ -29,6 +29,10 @@ export class GiftsService {
     this.http.post(environment.giftURL, gift).pipe(first()).subscribe();
   }
 
+  editGift(gift: Gift): void {
+    this.http.put(environment.giftURL, gift).pipe(first()).subscribe();
+  }
+
   removeGift(giftId: string): void {
     this.http
       .delete(`${environment.giftURL}/${giftId}`)
