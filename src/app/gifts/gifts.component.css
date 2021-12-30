@@ -31,6 +31,8 @@ mat-card {
   align-items: flex-end;
 }
 
+#go-back-button,
 #add-gift-button {
+  margin-left: 10px;
   border-radius: 50%;
 }

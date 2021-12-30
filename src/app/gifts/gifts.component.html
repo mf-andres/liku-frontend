@@ -59,6 +59,14 @@
 
 <span class="add-gift-button-span">
   <button
+    id="go-back-button"
+    mat-raised-button
+    routerLink="/birthdays"
+    [queryParams]="{ userId: userId }"
+  >
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <button
     id="add-gift-button"
     mat-raised-button
     routerLink="/add-gift"

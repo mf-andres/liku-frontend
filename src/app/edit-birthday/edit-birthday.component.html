@@ -26,7 +26,17 @@
       />
     </mat-form-field>
   </form>
-  <button id="edit-birthday-button" mat-button (click)="editBirthday()">
-    Confirmar cambios
-  </button>
+  <span>
+    <button
+      id="add-birthday-button"
+      mat-button
+      routerLink="/birthdays"
+      [queryParams]="{ userId: userId }"
+    >
+      Cancelar
+    </button>
+    <button id="edit-birthday-button" mat-button (click)="editBirthday()">
+      Confirmar cambios
+    </button>
+  </span>
 </mat-card>

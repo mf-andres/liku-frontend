@@ -14,7 +14,17 @@
       />
     </mat-form-field>
   </form>
-  <button id="edit-gift-button" mat-button (click)="onEditGift()">
-    Confirmar cambios
-  </button>
+  <span>
+    <button
+      id="add-birthday-button"
+      mat-button
+      routerLink="/gifts"
+      [queryParams]="{ userId: userId, birthdayId: birthdayId }"
+    >
+      Cancelar
+    </button>
+    <button id="edit-gift-button" mat-button (click)="onEditGift()">
+      Confirmar cambios
+    </button>
+  </span>
 </mat-card>
