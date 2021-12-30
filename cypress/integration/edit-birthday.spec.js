@@ -31,9 +31,9 @@ context("The edit birthday view", () => {
     cy.get("#edit-birthday-button").click();
 
     cy.wait("@editBirthday").then((interception) => {
-      expect(interception.request.body["date"]).to.equal("2021-11-30");
+      expect(interception.request.body["date"]).to.equal("2021-12-01");
       expect(interception.request.body["birthdayPerson"]).to.equal(
-        "Eichiro Oda"
+        "Andrés MuñozEichiro Oda"
       );
     });
   });

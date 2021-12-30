@@ -36,7 +36,7 @@ Cypress.Commands.add("goToBirthdays", () => {
 
 Cypress.Commands.add("goToGifts", () => {
   cy.goToBirthdays();
-  cy.get(".birthday-person").first().click();
+  cy.get(".see-gifts-button").first().click();
 });
 
 Cypress.Commands.add("goToAddBirthday", () => {

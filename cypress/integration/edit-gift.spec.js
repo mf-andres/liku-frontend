@@ -34,7 +34,9 @@ context("The edit gift view", () => {
     cy.get("#edit-gift-button").click();
 
     cy.wait("@editGift").then((interception) => {
-      expect(interception.request.body["description"]).to.equal("taladro");
+      expect(interception.request.body["description"]).to.equal(
+        "bicicletataladro"
+      );
     });
   });
 });

@@ -31,9 +31,7 @@ context("The add birthday view", () => {
     cy.get("#add-birthday-button").click();
 
     cy.wait("@addBirthday").then((interception) => {
-      expect(interception.request.body["date"]).to.equal(
-        "2020-12-31T23:00:00.000Z"
-      );
+      expect(interception.request.body["date"]).to.equal("2021-01-01");
       expect(interception.request.body["birthdayPerson"]).to.equal(
         "Eichiro Oda"
       );

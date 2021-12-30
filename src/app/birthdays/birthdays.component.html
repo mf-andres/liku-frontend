@@ -10,16 +10,19 @@
   >
     <span class="date"> {{ birthday.date }} </span>
 
-    <button
-      mat-stroked-button
-      class="birthday-person"
-      routerLink="/gifts"
-      [queryParams]="{ userId: userId, birthdayId: birthday.id }"
-    >
+    <span class="birthday-person">
       {{ birthday.birthdayPerson }}
-    </button>
+    </span>
 
     <span>
+      <button
+        class="see-gifts-button"
+        mat-stroked-button
+        routerLink="/gifts"
+        [queryParams]="{ userId: userId, birthdayId: birthday.id }"
+      >
+        Ver regalos
+      </button>
       <button
         class="edit-button"
         mat-button
