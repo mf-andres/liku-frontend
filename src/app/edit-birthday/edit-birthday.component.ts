@@ -15,6 +15,7 @@ export class EditBirthdayComponent implements OnInit {
   birthdayId!: string;
   formGroup!: FormGroup;
 
+  // TODO load the resource to give default values for date and birthday
   constructor(
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
