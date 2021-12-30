@@ -3,7 +3,11 @@
 </mat-card>
 
 <div id="birthdays-list">
-  <mat-card [id]="birthday.id" *ngFor="let birthday of birthdays | async">
+  <mat-card
+    [id]="birthday.id"
+    class="birthday-row"
+    *ngFor="let birthday of birthdays | async"
+  >
     <span class="date"> {{ birthday.date }} </span>
 
     <span
@@ -14,25 +18,29 @@
       {{ birthday.birthdayPerson }}
     </span>
 
-    <button class="edit-button" mat-button>
-      <mat-icon>edit</mat-icon>
-    </button>
+    <span>
+      <button class="edit-button" mat-button>
+        <mat-icon>edit</mat-icon>
+      </button>
 
-    <button
-      class="remove-button"
-      mat-button
-      (click)="removeBirthday(birthday.id)"
-    >
-      <mat-icon>remove</mat-icon>
-    </button>
+      <button
+        class="remove-button"
+        mat-button
+        (click)="removeBirthday(birthday.id)"
+      >
+        <mat-icon>remove</mat-icon>
+      </button>
+    </span>
   </mat-card>
 </div>
 
-<button
-  id="add-birthday-button"
-  mat-button
-  routerLink="/add-birthday"
-  [queryParams]="{ userId: userId }"
->
-  <mat-icon>add</mat-icon>
-</button>
+<span class="add-birthday-button-span">
+  <button
+    id="add-birthday-button"
+    mat-raised-button
+    routerLink="/add-birthday"
+    [queryParams]="{ userId: userId }"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
+</span>

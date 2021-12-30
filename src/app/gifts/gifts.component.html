@@ -2,12 +2,14 @@
   <mat-card-title>Lista de regalos</mat-card-title>
 </mat-card>
 
-<mat-slide-toggle id="gifted-non-gifted-slide">Gifted</mat-slide-toggle>
+<span class="slide-span">
+  <mat-slide-toggle id="gifted-non-gifted-slide">Regalados</mat-slide-toggle>
+</span>
 
 <div id="gifts-list">
   <mat-card [id]="gift.id" *ngFor="let gift of gifts | async">
     <div class="gift-description-container">
-      <span class="description"> {{ gift.description }} </span>
+      <h3 class="description">{{ gift.description }}</h3>
     </div>
 
     <div class="gift-options-container">
@@ -26,11 +28,13 @@
   </mat-card>
 </div>
 
-<button
-  id="add-gift-button"
-  mat-button
-  routerLink="/add-gift"
-  [queryParams]="{ userId: userId, birthdayId: birthdayId }"
->
-  <mat-icon>add</mat-icon>
-</button>
+<span class="add-gift-button-span">
+  <button
+    id="add-gift-button"
+    mat-raised-button
+    routerLink="/add-gift"
+    [queryParams]="{ userId: userId, birthdayId: birthdayId }"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
+</span>

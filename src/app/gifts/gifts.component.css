@@ -1,0 +1,36 @@
+mat-card {
+  margin: 35px;
+}
+
+.gift-description-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 16px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.gift-options-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slide-span,
+.add-gift-button-span {
+  margin: 35px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+#add-gift-button {
+  border-radius: 50%;
+}

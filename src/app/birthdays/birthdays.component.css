@@ -1,0 +1,28 @@
+mat-card {
+  margin: 35px;
+}
+
+.birthday-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.birthday-person:hover {
+  text-decoration: underline;
+}
+
+.add-birthday-button-span {
+  margin: 35px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+#add-birthday-button {
+  border-radius: 50%;
+}
