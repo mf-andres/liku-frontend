@@ -28,6 +28,10 @@ export class BirthdaysService {
     this.http.post(environment.birthdayURL, birthday).pipe(first()).subscribe();
   }
 
+  editBirthday(birthday: Birthday): void {
+    this.http.put(environment.birthdayURL, birthday).pipe(first()).subscribe();
+  }
+
   removeBirthday(birthdayId: string): void {
     this.http
       .delete(`${environment.birthdayURL}/${birthdayId}`)

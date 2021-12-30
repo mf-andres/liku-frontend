@@ -19,7 +19,12 @@
     </span>
 
     <span>
-      <button class="edit-button" mat-button>
+      <button
+        class="edit-button"
+        mat-button
+        routerLink="/edit-birthday"
+        [queryParams]="{ userId: userId, birthdayId: birthday.id }"
+      >
         <mat-icon>edit</mat-icon>
       </button>
 
