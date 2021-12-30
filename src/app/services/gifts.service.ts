@@ -39,4 +39,18 @@ export class GiftsService {
       .pipe(first())
       .subscribe();
   }
+
+  markAsGifted(giftId: string): void {
+    this.http
+      .put(`${environment.giftURL}/${giftId}/mark-as-gifted`, {})
+      .pipe(first())
+      .subscribe();
+  }
+
+  unMarkAsGifted(giftId: string): void {
+    this.http
+      .put(`${environment.giftURL}/${giftId}/unmark-as-gifted`, {})
+      .pipe(first())
+      .subscribe();
+  }
 }

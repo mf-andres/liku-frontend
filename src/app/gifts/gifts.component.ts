@@ -15,6 +15,8 @@ export class GiftsComponent implements OnInit {
 
   gifts!: Observable<Gift[]>;
 
+  showGifted = false;
+
   constructor(
     private route: ActivatedRoute,
     private giftsService: GiftsService
@@ -33,5 +35,19 @@ export class GiftsComponent implements OnInit {
   removeGift(giftId: string) {
     document.getElementById(giftId)?.remove();
     this.giftsService.removeGift(giftId);
+  }
+
+  onSlideToggle(): void {
+    this.showGifted = !this.showGifted;
+  }
+
+  onMarkAsGifted(giftId: string) {
+    console.log('show gifted ' + this.showGifted);
+    document.getElementById(giftId)?.remove();
+    if (!this.showGifted) {
+      this.giftsService.markAsGifted(giftId);
+    } else {
+      this.giftsService.unMarkAsGifted(giftId);
+    }
   }
 }

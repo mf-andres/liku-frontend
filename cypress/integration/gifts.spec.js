@@ -11,6 +11,12 @@ context("The gifts view", () => {
     cy.intercept("DELETE", "http://localhost:8000/gift/*", {
       statusCode: 200,
     }).as("removeGift");
+    cy.intercept("PUT", "http://localhost:8000/gift/*/mark-as-gifted", {
+      statusCode: 200,
+    }).as("markAsGifted");
+    cy.intercept("PUT", "http://localhost:8000/gift/*/unmark-as-gifted", {
+      statusCode: 200,
+    }).as("unMarkAsGifted");
   });
 
   it("has the necesary elements", () => {
@@ -34,7 +40,7 @@ context("The gifts view", () => {
 
     cy.wait("@getGifts").then((interception) => {
       expect(interception.request.url).to.match(
-        /\?userID=user&birthdayId=c74ef681-5b22-4049-b7df-41cc2b66a008/
+        /\?userId=user&birthdayId=c74ef681-5b22-4049-b7df-41cc2b66a008/
       );
     });
   });
@@ -44,6 +50,29 @@ context("The gifts view", () => {
 
     cy.get(".remove-button").first().click();
     cy.wait("@removeGift").then((interception) => {
+      expect(interception.request.url).to.match(
+        /\/a05a3f69-7360-41e4-9360-67d961fba75a/
+      );
+    });
+  });
+
+  it("calls the gift service correctly to mark a gift as gifted", () => {
+    cy.goToGifts();
+
+    cy.get(".mark-as-gifted-button").first().click();
+    cy.wait("@markAsGifted").then((interception) => {
+      expect(interception.request.url).to.match(
+        /\/a05a3f69-7360-41e4-9360-67d961fba75a/
+      );
+    });
+  });
+
+  it("calls the gift service correctly to mark a gift as gifted", () => {
+    cy.goToGifts();
+
+    cy.get("#gifted-non-gifted-slide").click();
+    cy.get(".mark-as-gifted-button").first().click();
+    cy.wait("@unMarkAsGifted").then((interception) => {
       expect(interception.request.url).to.match(
         /\/a05a3f69-7360-41e4-9360-67d961fba75a/
       );

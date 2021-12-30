@@ -3,7 +3,12 @@
 </mat-card>
 
 <span class="slide-span">
-  <mat-slide-toggle id="gifted-non-gifted-slide">Regalados</mat-slide-toggle>
+  <mat-slide-toggle
+    id="gifted-non-gifted-slide"
+    [checked]="showGifted"
+    (toggleChange)="onSlideToggle()"
+    >Regalados</mat-slide-toggle
+  >
 </span>
 
 <div id="gifts-list">
@@ -13,7 +18,11 @@
     </div>
 
     <div class="gift-options-container">
-      <button class="mark-as-gifted-button" mat-button>
+      <button
+        class="mark-as-gifted-button"
+        mat-button
+        (click)="onMarkAsGifted(gift.id)"
+      >
         Marcar como regalado
       </button>
 
